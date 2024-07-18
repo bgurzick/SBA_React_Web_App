@@ -1,8 +1,14 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Requirements:
+-useState (used to save data from API)
+-useEffect (used to properly get data from an API)
+-react-router-dom (2 pages minimum)
+-(can use others, of course)
+-ReadME.MD
+-multiple commits 12 - 15 commits
+-get & display information from API
+-creativity is 5%
+-must solve a problem. Real or Fictional
+-must use async/await
+-can use Axios or Fetch
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
