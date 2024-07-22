@@ -99,11 +99,15 @@ function HomePage() {
               <h3>{moviesFish[currentFishIndex].Title}</h3>
               <p>{moviesFish[currentFishIndex].Year}</p>
             </div>
+            <div className="movie-buttons">
+                <button onClick={handleNextFish}>Next</button>
+
             <MovieCardButton
               movie={moviesFish[currentFishIndex]}
               onNextClick={handleNextFish}
               onWatchMaybeClick={handleWatchMaybe}
             />
+            </div>
           </>
         )}
       </div>
@@ -118,11 +122,15 @@ function HomePage() {
               <h3>{moviesJazz[currentJazzIndex].Title}</h3>
               <p>{moviesJazz[currentJazzIndex].Year}</p>
             </div>
+            <div className="movie-buttons">
+                <button onClick={handleNextJazz}>Next</button>
+            
             <MovieCardButton
               movie={moviesJazz[currentJazzIndex]}
               onNextClick={handleNextJazz}
               onWatchMaybeClick={handleWatchMaybe}
             />
+            </div>
           </>
         )}
       </div>
