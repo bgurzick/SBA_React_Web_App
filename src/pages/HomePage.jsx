@@ -5,12 +5,12 @@ import MovieCardButton from '../components/MovieCardButton';
 import '../App.css';
 
 function HomePage() {
-  const [moviesIf, setMoviesIf] = useState([]);
-  const [moviesBut, setMoviesBut] = useState([]);
-  const [moviesHow, setMoviesHow] = useState([]);
-  const [currentIfIndex, setCurrentIfIndex] = useState(0);
-  const [currentButIndex, setCurrentButIndex] = useState(0);
-  const [currentHowIndex, setCurrentHowIndex] = useState(0);
+  const [moviesBear, setMoviesBear] = useState([]);
+  const [moviesFish, setMoviesFish] = useState([]);
+  const [moviesJazz, setMoviesJazz] = useState([]);
+  const [currentBearIndex, setCurrentBearIndex] = useState(0);
+  const [currentFishIndex, setCurrentFishIndex] = useState(0);
+  const [currentJazzIndex, setCurrentJazzIndex] = useState(0);
   const [error, setError] = useState(null); 
 
   //useEffect and Axios GET requirement
@@ -32,21 +32,21 @@ function HomePage() {
     };
 
     // fetch movies based on designated keyword
-    fetchMoviesByKeyword('bear', setMoviesIf);
-    fetchMoviesByKeyword('fish', setMoviesBut);
-    fetchMoviesByKeyword('jazz', setMoviesHow);
+    fetchMoviesByKeyword('bear', setMoviesBear);
+    fetchMoviesByKeyword('fish', setMoviesFish);
+    fetchMoviesByKeyword('jazz', setMoviesJazz);
   }, []);
 
-  const handleNextIf = () => {
-    setCurrentIfIndex((prevIndex) => (prevIndex + 1) % moviesIf.length);
+  const handleNextBear = () => {
+    setCurrentBearIndex((prevIndex) => (prevIndex + 1) % moviesBear.length);
   };
 
-  const handleNextBut = () => {
-    setCurrentButIndex((prevIndex) => (prevIndex + 1) % moviesBut.length);
+  const handleNextFish = () => {
+    setCurrentFishIndex((prevIndex) => (prevIndex + 1) % moviesFish.length);
   };
 
-  const handleNextHow = () => {
-    setCurrentHowIndex((prevIndex) => (prevIndex + 1) % moviesHow.length);
+  const handleNextJazz = () => {
+    setCurrentJazzIndex((prevIndex) => (prevIndex + 1) % moviesJazz.length);
   };
 
   const handleWatchMaybe = (movie) => {
@@ -61,16 +61,15 @@ function HomePage() {
       <div className="year-card">
         <h2>films with "bear" in the title</h2>
         {error && <p className="error-message">{error}</p>}
-        {moviesIf.length > 0 && (
+        {moviesBear.length > 0 && (
           <>
             <div className="movie-display">
-              <h3>{moviesIf[currentIfIndex].Title}</h3>
-              <p>{moviesIf[currentIfIndex].Year}</p>
-              <p>Type: {moviesIf[currentIfIndex].Type}</p>
+              <h3>{moviesBear[currentBearIndex].Title}</h3>
+              <p>{moviesBear[currentBearIndex].Year}</p>
             </div>
             <MovieCardButton
-              movie={moviesIf[currentIfIndex]}
-              onNextClick={handleNextIf}
+              movie={moviesBear[currentBearIndex]}
+              onNextClick={handleNextBear}
               onWatchMaybeClick={handleWatchMaybe}
             />
           </>
@@ -81,16 +80,15 @@ function HomePage() {
       <div className="year-card">
         <h2>films with "fish" in the title</h2>
         {error && <p className="error-message">{error}</p>}
-        {moviesBut.length > 0 && (
+        {moviesFish.length > 0 && (
           <>
             <div className="movie-display">
-              <h3>{moviesBut[currentButIndex].Title}</h3>
-              <p>{moviesBut[currentButIndex].Year}</p>
-              <p>Type: {moviesBut[currentButIndex].Type}</p>
+              <h3>{moviesFish[currentFishIndex].Title}</h3>
+              <p>{moviesFish[currentFishIndex].Year}</p>
             </div>
             <MovieCardButton
-              movie={moviesBut[currentButIndex]}
-              onNextClick={handleNextBut}
+              movie={moviesFish[currentFishIndex]}
+              onNextClick={handleNextFish}
               onWatchMaybeClick={handleWatchMaybe}
             />
           </>
@@ -101,16 +99,15 @@ function HomePage() {
       <div className="year-card">
         <h2>films with "jazz" in the title</h2>
         {error && <p className="error-message">{error}</p>}
-        {moviesHow.length > 0 && (
+        {moviesJazz.length > 0 && (
           <>
             <div className="movie-display">
-              <h3>{moviesHow[currentHowIndex].Title}</h3>
-              <p>{moviesHow[currentHowIndex].Year}</p>
-              <p>Type: {moviesHow[currentHowIndex].Type}</p>
+              <h3>{moviesJazz[currentJazzIndex].Title}</h3>
+              <p>{moviesJazz[currentJazzIndex].Year}</p>
             </div>
             <MovieCardButton
-              movie={moviesHow[currentHowIndex]}
-              onNextClick={handleNextHow}
+              movie={moviesJazz[currentJazzIndex]}
+              onNextClick={handleNextJazz}
               onWatchMaybeClick={handleWatchMaybe}
             />
           </>
