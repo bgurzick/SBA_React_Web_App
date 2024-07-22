@@ -1,6 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 import MovieCardButton from '../components/MovieCardButton';
 import '../App.css';
 
@@ -49,14 +50,23 @@ function HomePage() {
     setCurrentJazzIndex((prevIndex) => (prevIndex + 1) % moviesJazz.length);
   };
 
+  
+  const [watchMaybeList, setWatchMaybeList] = useState([]);
+
   const handleWatchMaybe = (movie) => {
-    // make a way to save WatchMaybe choices
-    console.log('Adding to Watch Maybe:', movie);
+    // check if movie is in the list already
+    if (!watchMaybeList.some((m) => m.imdbID === movie.imdbID)) {
+        setWatchMaybeList([...watchMaybeList, movie]);
+        localStorage.setItem('watchList', JSON.stringify([...watchMaybeList, movie]));
+    }
   };
 
   return (
     <div className="container">
       <h1>JUST PICK A MOVIE ALREADY!</h1>
+
+      <Link to={{ pathname: `/watch-maybe`, state: { watchMaybeList } }} className="goto-watch-maybe-btn">Go to Watch Maybe
+    </Link>
 
       <div className="year-card">
         <h2>films with "bear" in the title</h2>
@@ -67,11 +77,14 @@ function HomePage() {
               <h3>{moviesBear[currentBearIndex].Title}</h3>
               <p>{moviesBear[currentBearIndex].Year}</p>
             </div>
+            <div className="movie-buttons">
+                <button onClick={handleNextBear}>Next</button>
             <MovieCardButton
               movie={moviesBear[currentBearIndex]}
               onNextClick={handleNextBear}
               onWatchMaybeClick={handleWatchMaybe}
             />
+            </div>
           </>
         )}
       </div>
