@@ -23,6 +23,9 @@ function WatchMaybe() {
     <div className="container">
       <h1>Watch Maybe List</h1>
 
+      <Link to='/' className="goto-watch-maybe-btn">Go Back Home
+    </Link>
+
       <div className="movie-list">
         {watchList.length > 0 ? (
           watchList.map(movie => (
@@ -38,7 +41,6 @@ function WatchMaybe() {
         )}
       </div>
 
-      <Link to="/">Go Back Home</Link>
     </div>
   );
 }
