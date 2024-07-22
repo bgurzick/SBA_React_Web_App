@@ -19,7 +19,7 @@ Current Status:
  - useState and useEffect (done)
  - 2 pages (done, sort of - data passing, but still ugly and clunky)
  - Lots to clean up
- - what problem am I solving? umm... novel ways to choose a movie?
+ - what problem am I solving? umm... a novel -if somewhat limited - way to choose a movie?
 
  Frustration:
  - this is not the project I set out to do! I was building something with the setlist.fm API (music/live show database), tested it out and everything. Then when I tried to do it as front-end/React App (as oppose to node/express) I ran into CORS issues that I couldn't seem to circumnavigate. So I had to burn it down and start form scratch. *stressful sigh*
