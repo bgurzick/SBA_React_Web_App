@@ -26,7 +26,7 @@ function WatchMaybe() {
       <div className="movie-list">
         {watchList.length > 0 ? (
           watchList.map(movie => (
-            <div key={movie.imdbID} className="movie-card">
+            <div key={movie.imdbID} className="movie-display">
               <h3>{movie.Title}</h3>
               <p>{movie.Year}</p>
               <p>{movie.Plot}</p>
@@ -38,7 +38,7 @@ function WatchMaybe() {
         )}
       </div>
 
-      <Link to="/">Back to Home</Link>
+      <Link to="/">Go Back Home</Link>
     </div>
   );
 }
