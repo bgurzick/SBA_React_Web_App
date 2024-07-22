@@ -15,6 +15,7 @@ Requirements:
 
 Current Status:
  - API axios GET & display (done)
+ -ReadME.MD (done)
  - useState and useEffect (done)
  - 2 pages (done, sort of - data passing, but still ugly and clunky)
  - Lots to clean up

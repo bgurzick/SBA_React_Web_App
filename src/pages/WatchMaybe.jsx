@@ -37,7 +37,9 @@ function WatchMaybe() {
             </div>
           ))
         ) : (
+          <div className="none-added">
           <p>No movies added to watch list yet.</p>
+          </div>
         )}
       </div>
 

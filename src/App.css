@@ -104,3 +104,9 @@ h1 {
 .goto-watch-maybe-btn:hover {
   background-color: rgb(65, 2, 13);
 }
+
+.none-added {
+  font-size: large;
+  color: white;
+
+}
